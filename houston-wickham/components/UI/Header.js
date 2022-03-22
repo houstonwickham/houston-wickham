@@ -6,25 +6,18 @@ import styles from '../../styles/Header.module.css';
 const Header = () => {
   return (
     <header className={styles.header}>
-      <Image
-        src={logo}
-        alt='World Wide Wickham'
-        width={60}
-        height={60}
-        placeholder='blur'
-      />
+      <Link href='/'>
+        <Image
+          src={logo}
+          alt='World Wide Wickham'
+          width={60}
+          height={60}
+          placeholder='blur'
+        />
+      </Link>
       <nav>
-        <ul>
-          <li>
-            <Link href='/'>Home</Link>
-          </li>
-          <li>
-            <Link href='/projects'>Projects</Link>
-          </li>
-          <li>
-            <Link href='/contact'>Contact</Link>
-          </li>
-        </ul>
+        <Link href='/projects'>PROJECTS</Link>
+        <Link href='/contact'>CONTACT</Link>
       </nav>
     </header>
   );
