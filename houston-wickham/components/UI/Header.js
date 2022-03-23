@@ -1,9 +1,8 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
-import logo from '../../public/www-logo.png';
+import Sidebar from './Sidebar';
 import styles from '../../styles/Header.module.css';
-import { FaBars, FaTimes } from 'react-icons/fa';
+import { FaBars } from 'react-icons/fa';
 
 const Header = () => {
   const [navOpen, setNavOpen] = useState(false);
@@ -24,17 +23,7 @@ const Header = () => {
           </button>
         </div>
       </header>
-      <div className={navOpen ? styles.mobileNavActive : styles.mobileNav}>
-        <div className={styles.mobileCloseHolder}>
-          <button onClick={() => setNavOpen(false)}>
-            <FaTimes />
-          </button>
-        </div>
-        <ul className={styles.mobileNavList} onClick={() => setNavOpen(false)}>
-          <Link href='/projects'>PROJECTS</Link>
-          <Link href='/contact'>CONTACT</Link>
-        </ul>
-      </div>
+      <Sidebar navOpen={navOpen} onCloseNav={() => setNavOpen(false)} />
     </>
   );
 };
