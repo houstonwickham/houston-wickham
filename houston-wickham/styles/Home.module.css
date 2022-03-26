@@ -1,6 +1,130 @@
 .main {
   display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin-top: 80px;
+  margin-bottom: 28px;
+  height: calc(100vh - 108px);
+  width: 100%;
+  padding-inline: 2rem;
+  max-width: 1100px;
+}
+
+.main ul {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 8px;
+  height: 50px;
+}
+
+.main ul li {
+  width: 34px;
+  display: flex;
   justify-content: center;
   align-items: center;
-  height: 100vh;
+}
+
+.main ul li a {
+  font-size: 26px;
+  line-height: 0px;
+  color: #000;
+}
+
+@media (hover: hover) {
+  .main li a:hover {
+    color: #1fc779;
+    transition: all 0.3s ease-in-out;
+    font-size: 32px;
+  }
+}
+
+.container {
+  display: flex;
+  justify-content: center;
+}
+
+.main h1 {
+  font-size: 70px;
+  line-height: 63px;
+  font-weight: 900;
+  font-style: italic;
+  text-shadow: -4px 2px 3px #1fc779;
+}
+
+@media (hover: hover) {
+  .main h1:hover {
+    color: #1fc779;
+    text-shadow: -4px 2px 3px #000;
+    transition: all 0.3s ease-in-out;
+  }
+  .main h2:hover {
+    color: #1fc779;
+    text-shadow: -4px 2px 3px #000;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
+.main h2 {
+  font-size: 40px;
+  line-height: 44px;
+  font-weight: 900;
+  font-style: italic;
+  text-shadow: -4px 2px 3px #1fc779;
+  padding-bottom: 20px;
+}
+
+.main p {
+  font-size: 14px;
+  line-height: 30px;
+  max-width: 550px;
+  padding-left: 6px;
+  padding-top: 20px;
+  font-family: 'Roboto Mono', monospace;
+}
+
+.mainText {
+  font-size: 18px !important;
+}
+
+@media screen and (max-width: 768px) {
+  .main li a:hover {
+    color: #000;
+    transition: all 0.3s ease-in-out;
+    font-size: 26px;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .main h1 {
+    font-size: 63px;
+    line-height: 60px;
+  }
+  .main h2 {
+    font-size: 36px;
+    line-height: 40px;
+    padding-bottom: 10px;
+  }
+  .mainText {
+    font-size: 14px !important;
+    padding-top: 10px !important;
+  }
+}
+
+@media screen and (max-width: 444px) {
+  .main h1 {
+    font-size: 43px;
+    line-height: 43px;
+  }
+  .main h2 {
+    font-size: 30px;
+    line-height: 32px;
+  }
+  .main p {
+    font-size: 15px;
+    padding-top: 10px;
+  }
 }

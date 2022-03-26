@@ -1,38 +1,88 @@
-import Head from 'next/head';
+import { useForm, ValidationError } from '@formspree/react';
 import styles from '../styles/Contact.module.css';
+import { toast } from 'react-toastify';
 
-const contact = () => {
+function Contact() {
+  const [state, handleSubmit] = useForm('xzbovnwp');
+
+  const handleValidation = (e) => {
+    e.preventDefault();
+    if (e.target.name.value.length < 1) {
+      toast.error('enter your name');
+      return;
+    }
+    if (e.target.email.value.length < 1) {
+      toast.error('enter your email');
+      return;
+    }
+    if (e.target.message.value.length < 1) {
+      toast.error('enter a message');
+      return;
+    }
+    handleSubmit(e);
+  };
+
+  if (state.succeeded) {
+    return (
+      <p id='contact' className={styles.success}>
+        Thanks for reaching out!
+      </p>
+    );
+  }
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Houston Wickham</title>
-        <meta charset='utf-8' />
-        <meta
-          name='description'
-          content='Contact Page for Houston Wickham - Front End Developer'
-        />
-        <meta name='author' content='Houston Wickham' />
-        <meta name='keywords' content='Houston Wickham' />
-
-        <meta property='og:title' content='Houston Wickham' />
-        <meta property='og:type' content='website' />
-        <meta
-          property='og:url'
-          content='https:www.houstonwickham.com/contact'
-        />
-        <meta
-          property='og:image'
-          content='https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
-        />
-
-        <link rel='icon' href='/favicon.ico' />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>Contact</h1>
-      </main>
-    </div>
+    <main className={styles.container} id='contact'>
+      <h1 className={styles.heading}>Contact Me</h1>
+      <form onSubmit={handleValidation} className={styles.form}>
+        <div className={styles.formContainer}>
+          <label htmlFor='name'>Full Name:</label>
+          <input
+            id='name'
+            type='name'
+            name='name'
+            placeholder='First and Last'
+            required=''
+          />
+          <ValidationError prefix='Name' field='name' errors={state.errors} />
+        </div>
+        <div className={styles.formContainer}>
+          <label htmlFor='email'>Email Address:</label>
+          <input
+            id='email'
+            type='email'
+            name='email'
+            placeholder='email@domain.tld'
+            required=''
+          />
+          <ValidationError prefix='Email' field='email' errors={state.errors} />
+        </div>
+        <div className={styles.formContainer}>
+          <label htmlFor='message'>Message:</label>
+          <textarea
+            id='message'
+            name='message'
+            placeholder='Enter your message here'
+            required=''
+          />
+          <ValidationError
+            prefix='Message'
+            field='message'
+            errors={state.errors}
+          />
+        </div>
+        <div className={styles.formContainer}>
+          <input
+            type='hidden'
+            name='_subject'
+            id='email-subject'
+            value='Contact Form Submission'
+          ></input>
+        </div>
+        <button type='submit' disabled={state.submitting}>
+          Submit
+        </button>
+      </form>
+    </main>
   );
-};
+}
 
-export default contact;
+export default Contact;

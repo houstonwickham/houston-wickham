@@ -20,15 +20,32 @@
   max-width: 1100px;
 }
 
+.headerWrapper nav {
+  width: 240px;
+  height: 80px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .header a {
   text-decoration: none;
   color: #fff;
   font-weight: 900;
   font-style: italic;
   font-size: 1em;
+  width: 120px;
   padding-inline: 0.4rem;
   transition: all 0.5s ease-in-out;
-  height: 80px;
+}
+@media (hover: hover) {
+  .header a:hover {
+    color: #1fc779;
+    text-shadow: -2px 1.5px 2px #fff;
+    font-size: 1.2em;
+    line-height: 1, 2em;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .header button {
@@ -39,33 +56,30 @@
   font-size: 1.8rem;
 }
 
+@media (hover: hover) {
+  .header button:hover {
+    color: #1fc779;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
 .logo {
   font-size: 2.5rem;
   font-weight: 900;
   font-style: italic;
 }
 
-.mobileNav {
-  background: rgba(0, 0, 0, 0.95);
-  height: 100vw;
+.mobileNav,
+.mobileNavActive {
+  background: #000;
+  opacity: 0%;
+  height: 100%;
   position: fixed;
   top: 0;
   right: -100%;
   overflow: hidden;
   width: 60%;
-  z-index: 10;
-  transition: all 0.5s ease-in-out;
-}
-
-.mobileNavActive {
-  background: rgba(0, 0, 0, 0.95);
-  height: 100vw;
-  position: fixed;
-  top: 0;
-  right: 0;
-  overflow: hidden;
-  width: 60%;
-  z-index: 10;
+  z-index: 11;
   transition: all 0.5s ease-in-out;
 }
 
@@ -77,7 +91,8 @@
   padding-inline: 0.4rem;
 }
 
-.mobileNav button {
+.mobileNav button,
+.mobileNavActive button {
   color: #fff;
   background: none;
   border: 0;
@@ -87,14 +102,18 @@
   align-items: center;
 }
 
-.mobileNavActive button {
-  color: #fff;
-  background: none;
-  border: 0;
-  font-size: 1.8rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.mobileNav button:active,
+.mobileNavActive button:active {
+  color: #000;
+  transition: 0.2s;
+}
+
+@media (hover: hover) {
+  .mobileNav button:hover,
+  .mobileNavActive button:hover {
+    color: #1fc779;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 .mobileNav nav {
@@ -114,6 +133,8 @@
 .mobileNavList {
   display: flex;
   flex-direction: column;
+  padding: 0;
+  text-align: center;
 }
 
 .mobileNavList a {
@@ -122,8 +143,15 @@
   font-weight: 900;
   font-style: italic;
   font-size: 1.8em;
-  padding: 1rem;
+  padding: 0.6rem;
   transition: 0.5s;
+}
+
+@media (hover: hover) {
+  .mobileNavList a:hover {
+    color: #1fc779;
+    transition: all 0.3s ease-in-out;
+  }
 }
 
 @media screen and (max-width: 768px) {
@@ -132,5 +160,33 @@
   }
   .header button {
     display: flex;
+  }
+  .mobileNavActive {
+    background: #000;
+    opacity: 96%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    right: 0;
+    overflow: hidden;
+    width: 60%;
+    z-index: 10;
+    transition: all 0.5s ease-in-out;
+  }
+  .header a:hover {
+    color: #fff;
+    font-size: 1em;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .mobileNavList a {
+    font-size: 1.6em;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .mobileNavList a {
+    font-size: 1.3em;
   }
 }

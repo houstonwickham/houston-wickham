@@ -1,9 +1,12 @@
 import Head from 'next/head';
-import styles from '../styles/Home.module.css';
+import Project from '../components/projects/Project';
+import Contact from './Contact';
+import Projects from './Projects';
+import Home from './Home';
 
-export default function Home() {
+export default function index() {
   return (
-    <div className={styles.container}>
+    <>
       <Head>
         <title>Houston Wickham</title>
         <meta charset='utf-8' />
@@ -16,7 +19,7 @@ export default function Home() {
 
         <meta property='og:title' content='Houston Wickham' />
         <meta property='og:type' content='website' />
-        <meta property='og:url' content='https:www.houstonwickham.com' />
+        <meta property='og:url' content='https://houstonwickham.com/' />
         <meta
           property='og:image'
           content='https://images.unsplash.com/photo-1593720213428-28a5b9e94613?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80'
@@ -24,10 +27,9 @@ export default function Home() {
 
         <link rel='icon' href='/favicon.ico' />
       </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>Houston Wickham</h1>
-      </main>
-    </div>
+      <Home />
+      <Projects />
+      <Contact />
+    </>
   );
 }
