@@ -30,8 +30,10 @@ function Contact() {
     );
   }
   return (
-    <main className={styles.container} id='contact'>
-      <h1 className={styles.heading}>Contact Me</h1>
+    <main className={styles.container}>
+      <h1 className={styles.heading} id='contact'>
+        Contact Me
+      </h1>
       <form onSubmit={handleValidation} className={styles.form}>
         <div className={styles.formContainer}>
           <label htmlFor='name'>Full Name:</label>

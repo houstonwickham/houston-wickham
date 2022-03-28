@@ -12,7 +12,11 @@ const Header = () => {
       <header className={styles.header}>
         <div className={styles.headerWrapper}>
           <div className={styles.logo} onClick={() => setNavOpen(false)}>
-            <ScrollLink to='home' smooth={true}>
+            <ScrollLink
+              to='home'
+              smooth={true}
+              onClick={() => setNavOpen(false)}
+            >
               HW
             </ScrollLink>
           </div>
@@ -21,24 +25,15 @@ const Header = () => {
               to='projects'
               smooth={true}
               duration={1000}
-              hashSpy={true}
+              offset={-100}
             >
               PROJECTS
             </ScrollLink>
-            <ScrollLink
-              to='contact'
-              smooth={true}
-              duration={1000}
-              hashSpy={true}
-            >
+            <ScrollLink to='contact' smooth={true} duration={1000}>
               CONTACT
             </ScrollLink>
           </nav>
-          <button
-            onClick={() => setNavOpen(true)}
-            duration={1000}
-            hashSpy={true}
-          >
+          <button onClick={() => setNavOpen(true)}>
             <FaBars />
           </button>
         </div>

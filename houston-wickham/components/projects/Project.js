@@ -1,8 +1,8 @@
-const Project = ({ name, description, image }) => {
+const Project = ({ name, description, image, link }) => {
   return (
     <div>
-      <h1>{name}</h1>
-      <h2>{image}</h2>
+      <h2>{name}</h2>
+      <p>{image}</p>
       <p>{description}</p>
     </div>
   );

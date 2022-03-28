@@ -1,4 +1,4 @@
-import Link from 'next/link';
+import { Link as ScrollLink } from 'react-scroll';
 import styles from '../../styles/Header.module.css';
 import { FaTimes } from 'react-icons/fa';
 
@@ -11,8 +11,17 @@ const Sidebar = ({ navOpen, onCloseNav }) => {
         </button>
       </div>
       <ul className={styles.mobileNavList} onClick={onCloseNav}>
-        <Link href='/projects'>PROJECTS</Link>
-        <Link href='/contact'>CONTACT</Link>
+        <ScrollLink
+          to='projects'
+          smooth={true}
+          onClick={onCloseNav}
+          offset={-100}
+        >
+          PROJECTS
+        </ScrollLink>
+        <ScrollLink to='contact' smooth={true} onClick={onCloseNav}>
+          CONTACT
+        </ScrollLink>
       </ul>
     </div>
   );
