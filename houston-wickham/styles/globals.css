@@ -75,6 +75,7 @@ select {
     scroll-behavior: auto !important;
   }
 }
+
 @media screen and (max-width: 768px) {
   .Toastify__toast {
     width: 200px;

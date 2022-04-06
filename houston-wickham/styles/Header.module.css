@@ -28,6 +28,10 @@
   align-items: center;
 }
 
+.active {
+  border: 4px red solid;
+}
+
 .header a {
   text-decoration: none;
   color: #fff;
@@ -38,6 +42,7 @@
   padding-inline: 0.4rem;
   transition: all 0.5s ease-in-out;
 }
+
 @media (hover: hover) {
   .header a:hover {
     color: #1fc779;
@@ -176,6 +181,7 @@
   .header a:hover {
     color: #fff;
     font-size: 1em;
+    text-shadow: none;
   }
 }
 

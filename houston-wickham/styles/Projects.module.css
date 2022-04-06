@@ -6,6 +6,18 @@
   height: 100%;
 }
 
+.title {
+  margin-bottom: 20px;
+}
+
+@media (hover: hover) {
+  .title:hover {
+    color: #1fc779;
+    text-shadow: -4px 2px 3px #000;
+    transition: all 0.3s ease-in-out;
+  }
+}
+
 .main h1 {
   font-size: 40px;
   line-height: 44px;
@@ -14,4 +26,123 @@
   text-shadow: -4px 2px 3px #1fc779;
   padding-block: 20px;
   text-align: center;
+}
+
+.projectListWrapper {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  margin-inline: 20px;
+  gap: 40px;
+}
+
+.projectWrapper {
+  background-color: #cecaff;
+  border-radius: 30px;
+  text-align: center;
+  padding-top: 20px;
+  box-shadow: 5px 5px 15px #7973b3;
+  transition: all 0.3s ease-in-out;
+  overflow: hidden;
+  position: relative;
+}
+
+.projectWrapper:hover {
+  background-color: #e2e0ff;
+  box-shadow: 10px 10px 15px #686299;
+  transition: all 0.3s ease-in-out;
+}
+
+.projectWrapper img {
+  border-radius: 10px;
+}
+
+.projectWrapper a {
+  color: #000000;
+  text-decoration: none;
+}
+
+.projectWrapper a h2 {
+  line-height: 1.4;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 28px;
+  padding-bottom: 10px;
+  text-align: center;
+}
+
+.projectWrapper a p {
+  line-height: 1.4;
+  font-family: 'Roboto Mono', monospace;
+  font-size: 15px;
+  opacity: 0;
+  display: none;
+  transition: all 0.3s ease-in-out;
+}
+
+.projectWrapper:hover a p {
+  display: block;
+  opacity: 1;
+  transition: all 0.3s ease-in-out;
+}
+
+.imageWrapper {
+  padding-inline: 10px;
+  margin-bottom: 80px;
+}
+
+.bottomBar {
+  background: #1fc779d8;
+  border-radius: 20px;
+  padding: 10px 15px;
+  text-align: left;
+  position: absolute;
+  top: 285px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+.projectWrapper:hover .bottomBar {
+  top: 130px;
+  right: 0;
+  left: 0;
+  bottom: 0;
+  transition: all 0.5s ease-in-out;
+}
+
+@media screen and (max-width: 1500px) {
+  .projectListWrapper {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media screen and (max-width: 910px) {
+  .projectListWrapper {
+    grid-template-columns: 1fr;
+  }
+  .imageWrapper {
+    margin-bottom: 0;
+  }
+  .bottomBar {
+    margin-top: 0px;
+    border-radius: 0px;
+    background: transparent;
+    position: relative;
+    top: auto;
+  }
+  .projectWrapper:hover .bottomBar {
+    margin-top: 0px;
+    border-radius: 0px;
+    background: transparent;
+    position: relative;
+    top: 0;
+  }
+  .projectWrapper a p {
+    display: block;
+    opacity: 1;
+  }
+  .projectWrapper:hover a p {
+    display: block;
+    opacity: 1;
+  }
 }

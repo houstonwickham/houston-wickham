@@ -1,5 +1,6 @@
 import Head from 'next/head';
-import Project from '../components/projects/Project';
+import dynamic from 'next/dynamic';
+
 import Contact from './Contact';
 import Projects from './Projects';
 import Home from './Home';

@@ -90,6 +90,12 @@
   font-size: 18px !important;
 }
 
+@media screen and (max-width: 1300px) {
+  .main p {
+    max-width: auto;
+  }
+}
+
 @media screen and (max-width: 768px) {
   .main li a:hover {
     color: #000;

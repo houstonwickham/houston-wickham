@@ -1,6 +1,7 @@
 import { useForm, ValidationError } from '@formspree/react';
 import styles from '../styles/Contact.module.css';
 import { toast } from 'react-toastify';
+import 'animate.css';
 
 function Contact() {
   const [state, handleSubmit] = useForm('xzbovnwp');
